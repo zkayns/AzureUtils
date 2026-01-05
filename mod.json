@@ -1,0 +1,46 @@
+{
+	"geode": "4.10.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "azurebluet.azure-utils",
+	"name": "Azure Utils",
+	"version": "v1.0.0",
+	"developer": "AzureBluet",
+	"description": "Utilities for Geometry Dash",
+	"settings": {
+		"cosmetic": {
+			"type": "title",
+			"name": "Cosmetic",
+			"description": "Cosmetic settings"
+		},
+		"force-background": {
+			"type": "int",
+			"name": "Force Background",
+			"description": "Forces the game to render a certain background. 0 = disabled.",
+			"default": 0,
+			"min": 0,
+			"max": 59
+		},
+		"remove-controller-glyphs": {
+			"type": "bool",
+			"name": "Remove Controller Glyphs",
+			"description": "Removes controller glyphs and labels when playing with a controller connected",
+			"default": false
+		},
+		"utility": {
+			"type": "title",
+			"name": "Utility",
+			"description": "Utility settings"
+		},
+		"socials-confirmation": {
+			"type": "bool",
+			"name": "Socials Confirmation",
+			"description": "Adds a confirmation popup to the Main Menu socials buttons.",
+			"default": false
+		}
+	}
+}
