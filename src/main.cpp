@@ -24,7 +24,37 @@
 #include <Geode/modify/LevelAreaInnerLayer.hpp>
 #include <Geode/modify/GJGarageLayer.hpp>
 #include <Geode/modify/LevelListLayer.hpp>
+#include <Geode/modify/PlayerObject.hpp>
+#include <Geode/modify/LevelSettingsObject.hpp>
 using namespace geode::prelude;
+class $modify(PlayerObject) {
+	virtual void update(float dt) {
+		this->update(dt);
+		if (Mod::get()->getSettingValue<bool>("no-wave-trail")) this->m_waveTrail->reset();
+		this->m_waveTrail->m_waveSize=Mod::get()->getSettingValue<double>("wave-trail-size");
+	};
+	void playSpawnEffect() {
+        if (!Mod::get()->getSettingValue<bool>("no-respawn-flash")) PlayerObject::playSpawnEffect();
+	};
+};
+class $modify(LevelSettingsObject) {
+	virtual bool init() {
+		auto r=LevelSettingsObject::init();
+		if (Mod::get()->getSettingValue<bool>("auto-legacy")) {
+			this->m_fixGravityBug=false;
+			this->m_allowMultiRotation=false;
+			this->m_sortGroups=false;
+			this->m_dynamicLevelHeight=false;
+			this->m_enablePlayerSqueeze=false;
+			this->m_fixRobotJump=false;
+			this->m_fixNegativeScale=false;
+			this->m_allowStaticRotate=false;
+			this->m_enable22Changes=false;
+			this->m_fixRadiusCollision=false;
+		};
+		return r;
+	};
+};
 class $modify(GJBaseGameLayer) {
     void createBackground(int background) {
         if (Mod::get()->getSettingValue<int64_t>("force-background")!=0) {

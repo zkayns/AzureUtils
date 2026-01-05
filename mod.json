@@ -12,6 +12,17 @@
 	"developer": "AzureBluet",
 	"description": "Utilities for Geometry Dash",
 	"settings": {
+		"creator": {
+			"type": "title",
+			"name": "Creator",
+			"description": "Creator settings"
+		},
+		"auto-legacy": {
+			"type": "bool",
+			"name": "Auto Legacy",
+			"description": "Automatically disables all 2.2 options (ex. Dynamic Level Height, Enable 2.2 Changes) upon level creation.",
+			"default": false
+		},
 		"cosmetic": {
 			"type": "title",
 			"name": "Cosmetic",
@@ -28,8 +39,32 @@
 		"remove-controller-glyphs": {
 			"type": "bool",
 			"name": "Remove Controller Glyphs",
-			"description": "Removes controller glyphs and labels when playing with a controller connected",
+			"description": "Removes controller glyphs and labels when playing with a controller connected.",
 			"default": false
+		},
+		"player": {
+			"type": "title",
+			"name": "Player",
+			"description": "Player settings"
+		},
+		"no-respawn-flash": {
+			"type": "bool",
+			"name": "No Respawn Flash",
+			"description": "Disables the flashing effect on respawn.",
+			"default": false
+		},
+		"no-wave-trail": {
+			"type": "bool",
+			"name": "No Wave Trail",
+			"description": "Disables the wave trail.",
+			"default": false
+		},
+		"wave-trail-size": {
+			"type": "float",
+			"name": "Wave Trail Size",
+			"description": "Multiplier for the wave trail's size.",
+			"default": 1,
+			"min": 0
 		},
 		"utility": {
 			"type": "title",
