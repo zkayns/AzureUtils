@@ -31,7 +31,7 @@ class $modify(PlayerObject) {
 	virtual void update(float dt) {
 		this->update(dt);
 		if (Mod::get()->getSettingValue<bool>("no-wave-trail")) this->m_waveTrail->reset();
-		this->m_waveTrail->m_waveSize=Mod::get()->getSettingValue<double>("wave-trail-size");
+		this->m_waveTrail->m_waveSize=Mod::get()->getSettingValue<double>("wave-trail-size")*this->m_vehicleSize;
 	};
 	void playSpawnEffect() {
         if (!Mod::get()->getSettingValue<bool>("no-respawn-flash")) PlayerObject::playSpawnEffect();
